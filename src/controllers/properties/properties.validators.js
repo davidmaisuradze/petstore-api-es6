@@ -1,23 +1,29 @@
 import Joi from 'joi';
 
 export default {
-    createCategory: {
-        body: {
-            title: Joi.string().max(250).required()
+    getPropertiesTree:{
+        params:{
+            id:Joi.string()
         }
     },
-    updateCategory: {
+    createProperty: {
+        body: {
+            title: Joi.string().max(250).required(),
+            categoryId: Joi.string().required()
+        }
+    },
+    updateProperty: {
         body: {
             id: Joi.string().required(),
             title: Joi.string().max(250).required()
         }
     },
-    updateCategoryParent: {
+    updatePropertyParent: {
         body: {
             id: Joi.string().required()
         }
     },
-    deleteCategory: {
+    deleteProperty: {
         params: {
             id: Joi.string()
         }

@@ -1,76 +1,68 @@
 import HttpStatus from 'http-status';
+import Property from '../../models/property.model';
 import Category from '../../models/category.model';
-import {updateCategoryService} from "../../services/categories/categories.service";
 import {arrayToTree, sortTree} from "../../utils/array-to-tree";
+import {updatePropertyService} from "../../services/properties/properties.service";
 
-export const getCategoriesTree = async (req, res, next) => {
+export const getPropertiesTree = async (req, res, next) => {
     try {
-        let categories = await Category.find({isDeleted: false});
-        categories = sortTree(arrayToTree(categories));
+        let properties = await Property.find({isDeleted: false});
+        properties = sortTree(arrayToTree(properties));
 
-        res.status(HttpStatus.OK).json(categories);
+        const categoryId = req.params.id;
+        const category = await Category.findById(categoryId);
+
+        const result = properties.filter(x => category.filterProperties.includes(x._id));
+
+        res.status(HttpStatus.OK).json(result);
     } catch (err) {
         return res.status(HttpStatus.BAD_REQUEST).json(err)
     }
 };
 
-export const getCategories = async (req, res, next) => {
-    try {
-        let categories = await Category.find(
-            {isDeleted: false},
-            '_id name title order parentId'
-        );
-
-        categories.sort((a, b) => {
-            if (a.name < b.name) {
-                return -1;
-            }
-            if (a.name > b.name) {
-                return 1;
-            }
-            return 0;
-        });
-
-        return res.status(HttpStatus.OK).json(categories);
-    } catch (err) {
-        return res.status(HttpStatus.BAD_REQUEST).json(err)
-    }
-};
-
-export const createCategory = async (req, res, next) => {
+export const createProperty = async (req, res, next) => {
     try {
         const reqData = req.body;
-        const maxOrder = await Category.findOne(
+        const maxOrder = await Property.findOne(
             {},
             'order',
             {sort: {order: -1}, limit: 1});
 
-        // set category data
-        const category = new Category({
+        // set property data
+        const property = new Property({
             title: reqData.title,
             order: maxOrder ? maxOrder.order + 1 : 1,
             parentId: reqData.parentId,
+            type: reqData.type,
             userId: req.currentUser._id
         });
 
-        // save category
-        const result = await category.save();
-        return res.status(HttpStatus.OK).json(result);
+        // save property
+        const result = await property.save();
+
+        const category = await Category.findOneAndUpdate(
+            {_id: reqData.categoryId},
+            {
+                $push: {filterProperties: property._id}
+            }
+        );
+
+        return res.status(HttpStatus.OK).json({property: result, category: category});
     } catch (err) {
         return res.status(HttpStatus.BAD_REQUEST).json(err)
     }
 };
 
-export const updateCategory = async (req, res, next) => {
+export const updateProperty = async (req, res, next) => {
     try {
         const reqData = req.body;
-        console.log(reqData, 'updateCategoryReqData');
 
-        const result = await Category.findOneAndUpdate(
+        const result = await Property.findOneAndUpdate(
             {_id: reqData.id},
             {
                 $set: {
                     title: reqData.title,
+                    type: reqData.type,
                     userId: req.currentUser._id,
                 }
             },
@@ -83,38 +75,35 @@ export const updateCategory = async (req, res, next) => {
     }
 };
 
-export const updateCategoryParent = async (req, res, next) => {
+export const updatePropertyParent = async (req, res, next) => {
     try {
         const reqData = req.body;
         const userId = req.currentUser._id;
         let order = 0;
 
-        console.log(reqData, 'reqData');
         if (!reqData.prevSiblingId) {
             order = 1;
         } else {
-            const sibling = await Category.findById(reqData.prevSiblingId);
+            const sibling = await Property.findById(reqData.prevSiblingId);
             order = sibling.order + 1;
 
-            console.log(sibling, 'sibling');
             // find and update all siblings with ordering greater than previous sibling
-            const updatedSiblings = await Category.updateMany(
+            const updatedSiblings = await Property.updateMany(
                 {parentId: reqData.parentId, order: {$gt: sibling.order}},
                 {$inc: {order: 1}, $set: {userId: req.currentUser._id}}
             );
-            console.log(updatedSiblings, 'updatedSiblings');
         }
 
         // find and update current category
-        return await updateCategoryService(res, reqData, order, userId);
+        return await updatePropertyService(res, reqData, order, userId);
     } catch (err) {
         return res.status(HttpStatus.BAD_REQUEST).json(err);
     }
 };
 
-export const deleteCategory = async (req, res, next) => {
+export const deleteProperty = async (req, res, next) => {
     try {
-        const result = await Category.findOneAndUpdate(
+        const result = await Property.findOneAndUpdate(
             {_id: req.params.id},
             {
                 $set: {
