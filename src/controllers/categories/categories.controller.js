@@ -1,16 +1,12 @@
 import HttpStatus from 'http-status';
 import Category from '../../models/category.model';
-import {getAllCategories, updateCategoryService} from "../../services/categories/categories.service";
+import {updateCategoryService} from "../../services/categories/categories.service";
 import {arrayToTree, sortTree} from "../../utils/array-to-tree";
 
 export const getCategoriesTree = async (req, res, next) => {
     try {
-        let categories = await Category.find(
-            {isDeleted: false},
-            '_id name title order parentId'
-        );
-        categories = arrayToTree(categories);
-        sortTree(categories);
+        let categories = await Category.find({isDeleted: false});
+        categories = sortTree(arrayToTree(categories));
 
         res.status(HttpStatus.OK).json(categories);
     } catch (err) {
@@ -54,6 +50,7 @@ export const createCategory = async (req, res, next) => {
             title: reqData.title,
             order: maxOrder ? maxOrder.order + 1 : 1,
             parentId: reqData.parentId,
+            type: reqData.type,
             userId: req.currentUser._id
         });
 
@@ -75,7 +72,7 @@ export const updateCategory = async (req, res, next) => {
             {
                 $set: {
                     title: reqData.title,
-                    userId: req.currentUser._id
+                    userId: req.currentUser._id,
                 }
             },
             {upsert: true, new: true}
