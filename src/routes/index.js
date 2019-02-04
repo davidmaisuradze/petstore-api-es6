@@ -4,6 +4,7 @@ import path from 'path';
 import AuthRoutes from './auth.routes';
 import CategoryRoutes from './categories.routes';
 import PropertyRoutes from './properties.routes';
+import PropertyAttributeRoutes from './property-attributes.routes';
 import PetRoutes from './pets.routes';
 
 // middleware utils
@@ -14,6 +15,7 @@ const routes = new Router();
 routes.use('/auth', AuthRoutes);
 routes.use('/category', CategoryRoutes);
 routes.use('/property', PropertyRoutes);
+routes.use('/propertyAttribute', PropertyAttributeRoutes);
 routes.use('/pet', PetRoutes);
 
 routes.all('*', (req, res, next) => {

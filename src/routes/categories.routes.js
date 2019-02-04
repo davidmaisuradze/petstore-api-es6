@@ -19,6 +19,6 @@ routes.put('/', authenticate, validate(validators.updateCategory), CategoriesCon
 routes.put('/updateCategoryParent', authenticate, validate(validators.updateCategoryParent), CategoriesController.updateCategoryParent);
 
 // DELETE
-routes.delete('/:id', authenticate, validate(validators.deleteCategory), CategoriesController.deleteCategory);
+routes.delete('/:categoryId', authenticate, validate(validators.deleteCategory), CategoriesController.deleteCategory);
 
 export default routes;

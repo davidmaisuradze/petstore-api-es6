@@ -8,14 +8,13 @@ import authenticate from '../middlewares/authenticate';
 const routes = new Router();
 
 // GET
-routes.get('/getTree', authenticate, validate(validators.getPropertiesTree), PropertiesController.getPropertiesTree);
+routes.get('/', authenticate, PropertiesController.getProperties);
 
 // POST
 routes.post('/', authenticate, validate(validators.createProperty), PropertiesController.createProperty);
 
 // PUT
 routes.put('/', authenticate, validate(validators.updateProperty), PropertiesController.updateProperty);
-routes.put('/updatePropertyParent', authenticate, validate(validators.updatePropertyParent), PropertiesController.updatePropertyParent);
 
 // DELETE
 routes.delete('/:id', authenticate, validate(validators.deleteProperty), PropertiesController.deleteProperty);
