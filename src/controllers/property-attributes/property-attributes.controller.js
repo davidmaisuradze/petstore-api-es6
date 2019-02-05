@@ -5,7 +5,6 @@ import PropertyAttribute from '../../models/property-attribute.model';
 export const getAttributes = async (req, res, next) => {
     try {
         const propertyAttributes = await PropertyAttribute.find({}, null, {sort: {type: 1, value: 1}});
-        console.log(propertyAttributes, 'propertyAttributes');
         res.status(HttpStatus.OK).json(propertyAttributes);
     } catch (err) {
         console.log(err, 'err');

@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe0631de-b8e1-4e21-958f-5b34aa610a63" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controllers/property-attributes/property-attributes.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/property-attributes/property-attributes.validators.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/property-attribute.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/property-attributes.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/properties/properties.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/properties/properties.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/properties/properties.validators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/properties/properties.validators.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/property-attributes/property-attributes.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/property-attributes/property-attributes.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/category.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/category.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/property-attribute.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/property-attribute.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/property.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/property.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/categories.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/categories.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/properties.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/properties.routes.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/property-attributes/property-attributes.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="15" column="46" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="46" />
+            <state relative-caret-position="138">
+              <caret line="6" column="103" selection-start-line="6" selection-start-column="103" selection-end-line="6" selection-end-column="103" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -39,36 +33,39 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routes/pets.routes.js">
+        <entry file="file://$PROJECT_DIR$/src/models/category.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="115">
+              <caret line="5" column="54" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/models/pet.model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="10" column="38" lean-forward="true" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routes/property-attributes.routes.js">
+        <entry file="file://$PROJECT_DIR$/src/models/property.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="115">
+              <caret line="5" column="54" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routes/auth.routes.js">
+        <entry file="file://$PROJECT_DIR$/src/models/user.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="851">
+              <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
               <folding>
-                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,8 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/property-attribute.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="138">
+              <caret line="6" column="41" lean-forward="true" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -107,22 +104,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/properties/properties.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="268">
+              <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routes/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -168,6 +153,7 @@
       <find>type</find>
       <find>sort</find>
       <find>new:</find>
+      <find>getUserInfo</find>
     </findStrings>
     <replaceStrings>
       <replace>filters</replace>
@@ -205,7 +191,6 @@
         <option value="$PROJECT_DIR$/src/middlewares/authenticate.js" />
         <option value="$PROJECT_DIR$/src/utils/array-to-tree.js" />
         <option value="$PROJECT_DIR$/src/controllers/categories/categories.validators.js" />
-        <option value="$PROJECT_DIR$/src/models/category.model.js" />
         <option value="$PROJECT_DIR$/src/services/categories/categories.service.js" />
         <option value="$PROJECT_DIR$/src/services/properties/properties.service.js" />
         <option value="$PROJECT_DIR$/src/controllers/categories/categories.controller.js" />
@@ -214,14 +199,16 @@
         <option value="$PROJECT_DIR$/src/models/value-types.model.js" />
         <option value="$PROJECT_DIR$/src/models/property-attributes.model.js" />
         <option value="$PROJECT_DIR$/src/controllers/value-types/value-types.controller.js" />
-        <option value="$PROJECT_DIR$/src/models/property.model.js" />
         <option value="$PROJECT_DIR$/src/controllers/property-attributes/property-attributes.validators.js" />
         <option value="$PROJECT_DIR$/src/routes/index.js" />
         <option value="$PROJECT_DIR$/src/routes/property-attributes.routes.js" />
-        <option value="$PROJECT_DIR$/src/controllers/property-attributes/property-attributes.controller.js" />
-        <option value="$PROJECT_DIR$/src/controllers/properties/properties.controller.js" />
         <option value="$PROJECT_DIR$/src/routes/properties.routes.js" />
         <option value="$PROJECT_DIR$/src/controllers/properties/properties.validators.js" />
+        <option value="$PROJECT_DIR$/src/controllers/property-attributes/property-attributes.controller.js" />
+        <option value="$PROJECT_DIR$/src/models/property-attribute.model.js" />
+        <option value="$PROJECT_DIR$/src/models/property.model.js" />
+        <option value="$PROJECT_DIR$/src/models/category.model.js" />
+        <option value="$PROJECT_DIR$/src/controllers/properties/properties.controller.js" />
       </list>
     </option>
   </component>
@@ -390,7 +377,7 @@
       <workItem from="1549021191237" duration="179000" />
       <workItem from="1549021415849" duration="16474000" />
       <workItem from="1549213355636" duration="6313000" />
-      <workItem from="1549269130386" duration="14694000" />
+      <workItem from="1549269130386" duration="19542000" />
     </task>
     <task id="LOCAL-00001" summary="feature: added authguard, expirationTime, currentUser">
       <created>1547748340318</created>
@@ -427,11 +414,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549109372151</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feature: added propertyAttributes &#10;refactor: refactored properties">
+      <created>1549295238482</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1549295238482</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176967000" />
+    <option name="totallyTimeSpent" value="181815000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -465,7 +459,8 @@
     <MESSAGE value="feature: added authguard, expirationTime, currentUser" />
     <MESSAGE value="feature: fixed categories issues, added updateCategoryParent" />
     <MESSAGE value="feature: added properties. in getProperties I am getting categories tree and in it's children properties tree is inserted" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: added properties. in getProperties I am getting categories tree and in it's children properties tree is inserted" />
+    <MESSAGE value="feature: added propertyAttributes &#10;refactor: refactored properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: added propertyAttributes &#10;refactor: refactored properties" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.babelrc">
@@ -510,13 +505,6 @@
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/pet.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -580,16 +568,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/lodash/lodash.js" />
-    <entry file="file://$PROJECT_DIR$/src/models/user.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/jsonwebtoken/index.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/jsonwebtoken/verify.js" />
     <entry file="file://$PROJECT_DIR$/src/middlewares/authenticate.js">
@@ -657,13 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/category.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/categories.routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
@@ -694,13 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/property.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/auth.routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -708,13 +672,6 @@
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/property-attributes/property-attributes.validators.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -735,13 +692,6 @@
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/property-attribute.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -772,23 +722,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/properties/properties.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/controllers/property-attributes/property-attributes.validators.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="552">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/property-attributes/property-attributes.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="103" selection-start-line="6" selection-start-column="103" selection-end-line="6" selection-end-column="103" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/property-attributes/property-attributes.controller.js">
+    <entry file="file://$PROJECT_DIR$/src/models/user.model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="15" column="46" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="46" />
+        <state relative-caret-position="851">
+          <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/property-attribute.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="41" lean-forward="true" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/property.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="54" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/category.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="54" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/properties/properties.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/pet.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="38" lean-forward="true" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
         </state>
       </provider>
     </entry>

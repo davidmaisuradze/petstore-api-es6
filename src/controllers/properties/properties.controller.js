@@ -14,6 +14,11 @@ export const createProperty = async (req, res, next) => {
     try {
         const reqData = req.body;
 
+        const checkProperty = await Property.findOne({title: reqData.title});
+        if (checkProperty) {
+            return res.status(HttpStatus.BAD_REQUEST).json('property already exists');
+        }
+
         // set property data
         const property = new Property({
             title: reqData.title,

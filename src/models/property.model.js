@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const propertySchema = new Schema({
-    title: {type: String, required: true},
+    title: {type: String, required: true, unique: true},
     type: {type: String, required: true},
     attributes: [{type: Schema.Types.ObjectId}],
     isDeleted: {type: Boolean, default: false},
