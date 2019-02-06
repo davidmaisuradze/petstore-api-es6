@@ -9,7 +9,7 @@ const routes = new Router();
 
 // GET
 routes.get('/', authenticate, PropertyAttributesController.getAttributes);
-routes.get('/:propertyId', authenticate, validate(validators.getPropertyAttributesByPropertyId), PropertyAttributesController.getPropertyAttributesByPropertyId);
+routes.get('/getPropertyAttributesByPropertyId/:propertyId', authenticate, validate(validators.getPropertyAttributesByPropertyId), PropertyAttributesController.getPropertyAttributesByPropertyId);
 
 // POST
 routes.post('/', authenticate, validate(validators.createPropertyAttribute), PropertyAttributesController.createPropertyAttribute);

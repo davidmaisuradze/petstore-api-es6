@@ -19,20 +19,10 @@ export const getPropertyAttributesByPropertyId = async (req, res, next) => {
 
         let propertyAttributes = [];
         if (property.attributes && property.attributes.length) {
-            propertyAttributes = await PropertyAttribute.aggregate([
-                {
-                    $match: {
-                        _id: ObjectId(propertyId)
-                    }
-                },
-                {
-                    $group: {
-                        _id: '$type',
-                        data: {$push: '$$ROOT'}
-                    }
-                },
-                {$sort: {name: 1}}
-            ]);
+            propertyAttributes = await PropertyAttribute.find(
+                {'_id': {$in: property.attributes}},
+                null,
+                {sort: {type: 1, value: 1}});
         }
 
         return res.status(HttpStatus.OK).json(propertyAttributes);

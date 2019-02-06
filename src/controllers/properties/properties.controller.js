@@ -13,6 +13,7 @@ export const getProperties = async (req, res, next) => {
 export const createProperty = async (req, res, next) => {
     try {
         const reqData = req.body;
+        console.log(reqData);
 
         const checkProperty = await Property.findOne({title: reqData.title});
         if (checkProperty) {
@@ -23,6 +24,7 @@ export const createProperty = async (req, res, next) => {
         const property = new Property({
             title: reqData.title,
             type: reqData.type,
+            attributes: reqData.attributes,
             userId: req.currentUser._id
         });
 
@@ -31,6 +33,7 @@ export const createProperty = async (req, res, next) => {
 
         return res.status(HttpStatus.OK).json(result);
     } catch (err) {
+        console.log(err);
         return res.status(HttpStatus.BAD_REQUEST).json(err)
     }
 };
@@ -45,6 +48,7 @@ export const updateProperty = async (req, res, next) => {
                 $set: {
                     title: reqData.title,
                     type: reqData.type,
+                    attributes: reqData.attributes,
                     userId: req.currentUser._id,
                 }
             },
