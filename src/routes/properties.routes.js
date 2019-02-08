@@ -9,6 +9,7 @@ const routes = new Router();
 
 // GET
 routes.get('/', authenticate, PropertiesController.getProperties);
+routes.get('/getByCategoryId/:categoryId', validate(validators.getByCategoryId), authenticate, PropertiesController.getByCategoryId);
 
 // POST
 routes.post('/', authenticate, validate(validators.createProperty), PropertiesController.createProperty);

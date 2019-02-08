@@ -1,4 +1,5 @@
 import HttpStatus from 'http-status';
+import Category from '../../models/category.model';
 import Property from '../../models/property.model';
 
 export const getProperties = async (req, res, next) => {
@@ -10,10 +11,29 @@ export const getProperties = async (req, res, next) => {
     }
 };
 
+export const getByCategoryId = async (req, res, next) => {
+    try {
+        const categoryId = req.params.categoryId;
+        const category = await Category.findById(categoryId);
+
+        if (category) {
+            const properties = await Property.find(
+                {_id: {$in: category.filterProperties}}, null,
+                {sort: {type: 1, title: 1}}
+            );
+
+            return res.status(HttpStatus.OK).json(properties);
+        } else {
+            return res.status(HttpStatus.BAD_REQUEST).json('category not found');
+        }
+    } catch (err) {
+        return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(err);
+    }
+};
+
 export const createProperty = async (req, res, next) => {
     try {
         const reqData = req.body;
-        console.log(reqData);
 
         const checkProperty = await Property.findOne({title: reqData.title});
         if (checkProperty) {

@@ -1,6 +1,11 @@
 import Joi from 'joi';
 
 export default {
+    getByCategoryId:{
+      params:{
+          categoryId: Joi.string().required()
+      }
+    },
     createProperty: {
         body: {
             title: Joi.string().max(250).required(),

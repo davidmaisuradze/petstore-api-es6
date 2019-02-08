@@ -50,6 +50,7 @@ export const createCategory = async (req, res, next) => {
             title: reqData.title,
             order: maxOrder ? maxOrder.order + 1 : 1,
             parentId: reqData.parentId,
+            filterProperties: reqData.filterProperties,
             userId: req.currentUser._id
         });
 
@@ -64,13 +65,13 @@ export const createCategory = async (req, res, next) => {
 export const updateCategory = async (req, res, next) => {
     try {
         const reqData = req.body;
-        console.log(reqData, 'updateCategoryReqData');
 
         const result = await Category.findOneAndUpdate(
             {_id: reqData.id},
             {
                 $set: {
                     title: reqData.title,
+                    filterProperties:reqData.filterProperties,
                     userId: req.currentUser._id,
                 }
             },
@@ -89,20 +90,17 @@ export const updateCategoryParent = async (req, res, next) => {
         const userId = req.currentUser._id;
         let order = 0;
 
-        console.log(reqData, 'reqData');
         if (!reqData.prevSiblingId) {
             order = 1;
         } else {
             const sibling = await Category.findById(reqData.prevSiblingId);
             order = sibling.order + 1;
 
-            console.log(sibling, 'sibling');
             // find and update all siblings with ordering greater than previous sibling
             const updatedSiblings = await Category.updateMany(
                 {parentId: reqData.parentId, order: {$gt: sibling.order}},
                 {$inc: {order: 1}, $set: {userId: req.currentUser._id}}
             );
-            console.log(updatedSiblings, 'updatedSiblings');
         }
 
         // find and update current category
@@ -115,7 +113,7 @@ export const updateCategoryParent = async (req, res, next) => {
 export const deleteCategory = async (req, res, next) => {
     try {
         const result = await Category.findOneAndUpdate(
-            {_id: req.params.id},
+            {_id: req.params.categoryId},
             {
                 $set: {
                     isDeleted: true
